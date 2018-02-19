@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  app:
+    build: ./go-api
+    container_name: app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./go-api:/go/src/go-api
+    networks:
+      - backend
+    # command: go run main.go
+
+
+networks:
+  backend:
